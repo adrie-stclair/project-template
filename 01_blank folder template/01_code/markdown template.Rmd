@@ -1,0 +1,29 @@
+---
+title: "Template"
+author: "Adrienne St. Clair"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: 
+  html_document:
+    code_folding: hide
+       
+---
+
+
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, results = "hide") 
+
+library(here)
+library(tidyverse)
+library(ggplot2)
+
+```
+
+```{r directories}
+code_dir    <- "01_code"
+raw_data    <- "02_raw-data"
+data_dir    <- "03_clean-data"
+results_dir <- "04_results"
+```
+
