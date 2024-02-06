@@ -1,7 +1,7 @@
 ---
-title: "Template"
+title: "KEA Monitoring Protocol Development"
 author: "Adrienne St. Clair"
-date: "`r format(Sys.time(), '%d %B, %Y')`"
+date: "`r format(Sys.time(), 'd B, Y')`"
 output: 
   html_document:
     code_folding: hide
@@ -25,5 +25,21 @@ code_dir    <- "01_code"
 raw_data    <- "02_raw-data"
 data_dir    <- "03_clean-data"
 results_dir <- "04_results"
+```
+
+
+
+# Going from Percent Cover to 95 confidence intervals  
+
+If we have a sample of percent covers--1 per transect. How do we find the margin of error and the 95 confidence intervals?  
+
+I'll use some example data from the Turnstone monitoring done at Smith Bybee. I pulled the percent cover from their forested wetland habitat
+```{r}
+data <- as_tibble(as.numeric(c(".61", ".36", ".49", ".05", ".58", ".45", ".60", ".68", ".60", ".20", ".32"))) %>% 
+  mutate(plot = c(1:11))
+
+plot(data)
+hist(data$value)
+
 ```
 
